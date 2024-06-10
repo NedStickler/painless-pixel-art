@@ -1,2 +1,2 @@
-# painless-pixel-art
-AI powered pixel art generation.
+# Painless Pixel Art
+AI powered pixel art.
