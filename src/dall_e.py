@@ -9,5 +9,7 @@ if __name__ == "__main__":
     secret_key = os.getenv("OPEN_AI_KEY")
     client = OpenAI(api_key=secret_key)
 
-    response = client.images.generate(model="dall-e-3", prompt="a tomato", size="1024x1024", quality="standard", n=1)
+    green = "#00FF00"
+
+    response = client.images.generate(model="dall-e-3", prompt=f"a tomato, with a background of a single solid colour, and no shadows cast by the tomato", size="1024x1024", quality="standard", n=1)
     print(response)
