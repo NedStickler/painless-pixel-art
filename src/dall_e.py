@@ -21,11 +21,4 @@ class DallE():
         img = b64decode(response.data[0].b64_json)
         with open(save_path, "wb") as f:
             f.write(img)
-
-if __name__ == "__main__":
-    load_dotenv("..")
-    dall_e = DallE()
-
-    prompt = "Generate a realistic pickaxe. Do not draw any shadows. Do not add any additional frills to the image. Ensure the object is completely within the image bounds. Make the background colour a perfect white."
-    save_path = r".\assets\pickaxe.png"
-    dall_e.create(prompt, save_path)
+            

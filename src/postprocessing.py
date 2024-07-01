@@ -40,6 +40,4 @@ def postprocess(
         img.save(save_path)
     else:
         img.save(image_path)
-    
-if __name__ == "__main__":
-    postprocess(r".\assets\pickaxe.png", dimensions=(64, 64))
+        
