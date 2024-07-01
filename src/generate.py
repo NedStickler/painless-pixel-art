@@ -32,9 +32,4 @@ class Generator:
             if key not in self.__postprocess_params:
                 raise KeyError(f"No param named {key} to update.")
         self.__postprocess_params.update(update_dict)
-
-
-if __name__ == "__main__":
-    load_dotenv("..")
-    generator = Generator()
-    generator.generate("a beer glass", r".\assets\test_item.png")
+        
