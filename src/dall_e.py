@@ -1,13 +1,11 @@
 
-import os
 from openai import OpenAI
 from openai.types import ImagesResponse
 from dotenv import load_dotenv
 
 
 class DallE():
-    def __init__(self, api_key: str) -> None:
-        self.api_key = api_key
+    def __init__(self, api_key: str | None = None) -> None:
         self._client = OpenAI(api_key=api_key)
 
     def create(self, prompt: str) -> ImagesResponse:
@@ -23,7 +21,6 @@ class DallE():
 
 if __name__ == "__main__":
     load_dotenv("..")
-    secret_key = os.getenv("OPEN_AI_KEY")
-    dalle = DallE(secret_key)
-    response = dalle.create("a semi-realistic pickaxe, with no background. No shadows cast by the pickaxe. Do not add any additional frills to the image. Ensure the pickaxe is completely within the image bounds.")
+    dalle = DallE()
+    response = dalle.create("Generate a realistic pickaxe. Do not draw any shadows. Do not add any additional frills to the image. Ensure the object is completely within the image bounds. Make the background colour a perfect white.")
     print(response)
