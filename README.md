@@ -55,5 +55,7 @@ if __name__ == "__main__":
 
 This code produces two files: the original generated image, and the pixel art version after downsampling. In the case for the above code, the original image is named `apple.png`, and the pixel art version is suffixed with `_ppa`, i.e. `apple_ppa.png`. The following images were produced by running the above code:
 
-<img src="./assets/apple.png" alt="Original image" width="256"> 
-<img src="./assets/apple_ppa_large.png" alt="Original image" width="256">
+<p float="left" align="middle">
+    <img src="./assets/apple.png" alt="Original image" width="410"> 
+    <img src="./assets/apple_ppa_large.png" alt="Downsampled image" width="410">
+</p>
