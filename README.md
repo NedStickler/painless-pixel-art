@@ -45,6 +45,30 @@ pip install -r requirements.txt
 
 ## Usage
 The following section provides an example of how to use the tool.
+
+### OpenAI API key
+There are two ways for Painless Pixel Art to access an OpenAI API key to begin generating images. The recommended way is to allow the class to automatically access the `OPENAI_API_KEY` environment variable. This can be done by permanently adding the secret key as an environment variable, or through the use of a `.env` file and the `dotenv` Python package. The following code provides an example of the latter.
+```python
+from generator import generator
+from dotenv import load_dotenv
+
+if __name__ == "__main__":
+    load_dotenv("..")
+    generator = Generator()
+```
+The second method involves manually fetching the environment variable. An example follows:
+```python
+import os
+from generator import generator
+from dotenv import load_dotenv
+
+if __name__ == "__main__":
+    load_dotenv("..")
+    generator = Generator(api_key=os.getenv("OPENAI_API_KEY"))
+```
+**Note:** do not directly copy your OpenAI secret key into code. Take special care to ensure your secret keys are not published to any remote repositories.
+
+### Examples
 ```python
 from generate import Generator
 
@@ -57,5 +81,26 @@ This code produces two files: the original generated image, and the pixel art ve
 
 <p float="left" align="middle">
     <img src="./assets/apple.png" alt="Original image" width="410"> 
-    <img src="./assets/apple_ppa_large.png" alt="Downsampled image" width="410">
+    <img src="./assets/apple_pixelated.png" alt="Downsampled image" width="410">
 </p>
+
+It is possible to change how the image is post-processed by updating the `postprocess_params` dictionary through the `update_postprocess_params` method.
+```python
+from generate import Generator
+
+if __name__ == "__main__":
+    generator = Generator()
+    generator.update_postprocess_params({"dimensions": (64, 64)})
+    generator.generate("a bright green pear", "./assets/pear.png")
+```
+The following images were produced by the above code, where the downsampled image is now 64x64 instead of 32x32.
+
+<p float="left" align="middle">
+    <img src="./assets/pear.png" alt="Original image" width="410"> 
+    <img src="./assets/pear_pixelated.png" alt="Downsampled image" width="410">
+</p>
+
+## Additional information
+This project was executed to gain familiarity with the OpenAI API, and is **unfinished**. There will be bugs!
+
+There are future plans to turn Painless Pixel Art into a Python package.
