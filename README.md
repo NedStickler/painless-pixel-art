@@ -2,7 +2,7 @@
 Painless Pixel Art is a tool for creating simple pixel art objects.
 
 ## About
-Generative AI has allowed for easy access to art generation for a variety of purposes. Asking generative AI to produce pixel art, however, results in a *stylised* output, and is not correctly represented with the appropriate number of pixels.
+Generative AI has allowed for easy access to art generation for a variety of purposes. Asking generative AI to produce pixel art, however, results in a *stylised* output that is not represented with the appropriate number of pixels.
 
 Painless Pixel Art addresses these issues by providing an interface to OpenAI's Dall-E 2 generative model that first generates requested imagery, and then removes the background and performs a simple downsampling operation.
 
