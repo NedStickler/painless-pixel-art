@@ -30,10 +30,14 @@ class Generator:
     def postprocess_params(self) -> dict:
         return self.__postprocess_params
     
-    @postprocess_params.setter
-    def postprocess_params(self, update_dict: dict) -> None:
+    def update_postprocess_params(self, update_dict: dict) -> None:
         for key in update_dict.keys():
             if key not in self.__postprocess_params:
                 raise KeyError(f"No param named {key} to update.")
         self.__postprocess_params.update(update_dict)
-        
+
+
+if __name__ == "__main__":
+    generator = Generator()
+    generator.update_postprocess_params({"dimensions": (64, 64)})
+    print(generator.postprocess_params)
