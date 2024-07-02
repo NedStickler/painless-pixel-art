@@ -44,4 +44,16 @@ pip install -r requirements.txt
 6. Finally, generate an OpenAI API key to use for generating imagery. Guidance can be found [here](https://platform.openai.com/organization/api-keys).
 
 ## Usage
-The following section covers an example use case and how the tool may be used.
+The following section provides an example of how to use the tool.
+```python
+from generate import Generator
+
+if __name__ == "__main__":
+    generator = Generator()
+    generator.generate("a juicy red apple", "./assets/apple.png")
+```
+
+This code produces two files: the original generated image, and the pixel art version after downsampling. In the case for the above code, the original image is named `apple.png`, and the pixel art version is suffixed with `_ppa`, i.e. `apple_ppa.png`. The following images were produced by running the above code:
+
+<img src="./assets/apple.png" alt="Original image" width="300">
+<img src="./assets/apple_ppa.png" alt="Original image" width="300", style="width:300px;height:auto;">
