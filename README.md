@@ -1,5 +1,5 @@
 # Painless Pixel Art
-Painless Pixel Art is a set of tools for creating simple pixel art objects.
+Painless Pixel Art is a tool for creating simple pixel art objects.
 
 ## About
 Generative AI has allowed for easy access to art generation for a variety of purposes. Asking generative AI to produce pixel art, however, results in a *stylised* output, and is not correctly represented with the appropriate number of pixels.
