@@ -18,7 +18,11 @@ def postprocess(
         save_path: Path to the location to save the post-processed image.
         dimensions: Two-long tuple of integers with the desired dimensions of the downsampled image. Maximum of (1024, 1024).
         remove_bg: Boolean for application of the background removal process.
-        keep_original: Boolean for keeping the original file. If set to False, save_path must be None.
+        keep_original: Boolean for keeping the original file. If set to `False`, `save_path` must be None.
+    
+    Raises:
+        ValueError: If either height or width exceed 1024.
+        ValueError: If `keep_original` set to `False` and `save_path` not set to `None`.
     """
     # Validate arguments
     if dimensions[0] > 1024 or dimensions[1] > 1024:
@@ -40,4 +44,3 @@ def postprocess(
         img.save(save_path)
     else:
         img.save(image_path)
-        
